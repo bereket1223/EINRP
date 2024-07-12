@@ -1,0 +1,371 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 09, 2024 at 06:11 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.5
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `eikrp_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES
+(1, 'abr', 'abr@gmail.com', '1223');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `award`
+--
+
+CREATE TABLE `award` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `middle_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `age` int(11) NOT NULL,
+  `nationality` varchar(255) NOT NULL,
+  `region` varchar(255) NOT NULL,
+  `city_woreda` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `type_of_education` varchar(255) NOT NULL,
+  `education_level` varchar(50) NOT NULL,
+  `institution` varchar(100) NOT NULL,
+  `job_responsibilities` text NOT NULL,
+  `work_experience` text NOT NULL,
+  `work_type` varchar(255) NOT NULL,
+  `job_title` varchar(100) NOT NULL,
+  `description` text NOT NULL,
+  `valid_from` date NOT NULL,
+  `valid_to` date NOT NULL,
+  `total_budget` decimal(10,2) NOT NULL,
+  `cv` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `other_work_type` varchar(255) NOT NULL,
+  `average` float NOT NULL,
+  `evaluator1` varchar(255) DEFAULT NULL,
+  `evaluator2` varchar(255) DEFAULT NULL,
+  `evaluator3` varchar(255) DEFAULT NULL,
+  `evaluator4` varchar(255) DEFAULT NULL,
+  `evaluator5` varchar(255) DEFAULT NULL,
+  `evaluator6` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `award`
+--
+
+INSERT INTO `award` (`id`, `first_name`, `middle_name`, `last_name`, `gender`, `age`, `nationality`, `region`, `city_woreda`, `phone`, `email`, `type_of_education`, `education_level`, `institution`, `job_responsibilities`, `work_experience`, `work_type`, `job_title`, `description`, `valid_from`, `valid_to`, `total_budget`, `cv`, `created_at`, `other_work_type`, `average`, `evaluator1`, `evaluator2`, `evaluator3`, `evaluator4`, `evaluator5`, `evaluator6`) VALUES
+(1, '0', '0', '0', 'Male', 25, 'ethiopian', 'Region 2', 'ADDIS ', '0911111111', 'abrham@gmail.com', 'computer science', 'university', 'sdbjdvd', 'dkjbj f', 'sdjb fv', 'Innovation', 'investor', 'sfiuakjfa ', '2024-07-02', '2024-07-04', '25000.00', 'assignment3.docx', '2024-07-05 07:10:03', '', 178.17, '63', '67', '117', '336', '237', '249'),
+(2, '0', '0', '0', 'Female', 21, 'eth', 'Region 3', 'ADDIS ', '0923645456', 'abrham@gmail.com', 'computer science', 'university', 'sdbjdvd', 'zsk.jdfhkzjsn', 'ds;lkgj;kj', 'Innovation', 'fgh/kls/klhjdk', 'd/fgzdklgdkljdkj', '2024-07-08', '2024-08-03', '2222.00', 'WEB-BASED DOCTOR\'S APPOINTMENT DESIGN DOCUENT.docx', '2024-07-05 09:43:07', '', 18.67, '21', '19', '7', '7', '20', '38'),
+(3, '0', '0', '0', 'Male', 23, 'ethiopian', 'Region 2', 'ADDIS ', '0911111111', 'abrham@gmail.com', 'computer science', 'university', 'sdbjdvd', 'uydjsfuibkj ssiudnj z', 'su fjsme jke fsm', 'Innovation', 'investor', 'uifjsnf sfnjafn iufn', '2024-07-11', '2024-07-18', '40000.00', 'ABRHAM MOLLA STQA ASSIGNMENT.pdf', '2024-07-08 17:19:50', '', 72.5, '85', '70', '70', '70', '70', '70'),
+(4, 'Mikiyas', 'Fikirte', 'Meleka', 'Male', 21, 'ethiopian', 'Region 1', '02', '777777', 'mikiyas13@gmail.com', 'software', 'university', 'sdbjdvd', 'software manager ', 'hhhhhhh', 'Innovation', 'investor', 'hhhhhhh', '2024-07-17', '2024-07-08', '30000.00', 'Web-Based Doctors Appointment SRS.pdf', '2024-07-05 06:35:59', '', 0, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 'abrham', 'SFN', 'mo', 'Male', 21, 'ethiopian', 'Addis Ababa', 'ADDIS ', '0911111111', 'abrhammolla4@gmail.com', 'computer science', 'university', 'sdbjdvd', 'qwtsaegfasv ', 'gfasfbbfx', 'Technology', 'fgh/kls/klhjdk', 'fasgsvz', '2024-07-10', '2024-07-26', '12335.00', 'chapter 3&4 MAD presentation.pdf', '2024-07-08 16:52:38', '', 0, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 'abrham', 's\"dsk', 'mo', 'Female', 13, 'eth', 'Benishangul-Gumuz', 'ADDIS ', '0923645456', 'abrham@gmail.com', 'computer science', 'university', 'sdbjdvd', 'dfaskjef asfudikjasfdhun sdfiukjdfshn', 'seefiuhfs asioad iadsgjndf', 'Technology', 'abeba', 'sdfsg', '2024-07-18', '2024-07-27', '40000.00', 'AI individual assignment.pdf', '2024-07-08 17:07:20', '', 0, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 'kalkidan', 'SFN', 'DKDISKJ ', 'Female', 22, 'ethiopian', 'Somali', '22', '22222222', 'abrham@gmail.com', 'software', 'university', 'sdbjdvd', 'wqdiugjbf asfb af', 'asdfgb afsiaefb asfuinjf', 'Technology', 'fgh/kls/klhjdk', 'sadfjk JEF AfDB FAc', '2024-07-16', '2024-07-20', '333333.00', 'chapter 3&4 MAD presentation.pdf', '2024-07-08 17:29:40', '', 0, NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `committee`
+--
+
+CREATE TABLE `committee` (
+  `id` int(11) DEFAULT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `middle_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `age` int(11) NOT NULL,
+  `nationality` varchar(255) NOT NULL,
+  `region` varchar(255) NOT NULL,
+  `city_woreda` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `type_of_education` varchar(255) NOT NULL,
+  `education_level` varchar(255) NOT NULL,
+  `institution` varchar(255) NOT NULL,
+  `job_responsibilities` text NOT NULL,
+  `work_experience` text NOT NULL,
+  `work_type` varchar(255) NOT NULL,
+  `other_work_type` varchar(255) NOT NULL,
+  `job_title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `valid_from` date NOT NULL,
+  `valid_to` date NOT NULL,
+  `total_budget` decimal(10,2) NOT NULL,
+  `cv` varchar(255) NOT NULL,
+  `average` float NOT NULL,
+  `send_to_admin` tinyint(1) NOT NULL,
+  `last_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `status` varchar(255) NOT NULL,
+  `evaluator1` varchar(255) DEFAULT NULL,
+  `evaluator2` varchar(255) DEFAULT NULL,
+  `evaluator3` varchar(255) DEFAULT NULL,
+  `evaluator4` varchar(255) DEFAULT NULL,
+  `evaluator5` varchar(255) DEFAULT NULL,
+  `evaluator6` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `committee`
+--
+
+INSERT INTO `committee` (`id`, `first_name`, `middle_name`, `last_name`, `gender`, `age`, `nationality`, `region`, `city_woreda`, `phone`, `email`, `type_of_education`, `education_level`, `institution`, `job_responsibilities`, `work_experience`, `work_type`, `other_work_type`, `job_title`, `description`, `valid_from`, `valid_to`, `total_budget`, `cv`, `average`, `send_to_admin`, `last_modified`, `status`, `evaluator1`, `evaluator2`, `evaluator3`, `evaluator4`, `evaluator5`, `evaluator6`) VALUES
+(4, '0', '0', '0', 'Male', 21, 'ethiopian', 'Region 1', '02', '777777', 'mikiyas13@gmail.com', 'software', 'university', 'sdbjdvd', 'software manager ', 'hhhhhhh', 'Innovation', '', 'investor', 'hhhhhhh', '2024-07-17', '2024-07-08', '30000.00', 'Web-Based Doctors Appointment SRS.pdf', 0, 0, '2024-07-08 17:31:36', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(7, '0', '0', '0', 'Female', 22, 'ethiopian', 'Somali', '22', '22222222', 'abrham@gmail.com', 'software', 'university', 'sdbjdvd', 'wqdiugjbf asfb af', 'asdfgb afsiaefb asfuinjf', 'Technology', '', 'fgh/kls/klhjdk', 'sadfjk JEF AfDB FAc', '2024-07-16', '2024-07-20', '333333.00', 'chapter 3&4 MAD presentation.pdf', 0, 0, '2024-07-08 17:32:02', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 'abrham', 's\"dsk', 'mo', 'Female', 13, 'eth', 'Benishangul-Gumuz', 'ADDIS ', '0923645456', 'abrham@gmail.com', 'computer science', 'university', 'sdbjdvd', 'dfaskjef asfudikjasfdhun sdfiukjdfshn', 'seefiuhfs asioad iadsgjndf', 'Technology', '', 'abeba', 'sdfsg', '2024-07-18', '2024-07-27', '40000.00', 'AI individual assignment.pdf', 0, 0, '2024-07-08 17:34:49', '', NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `indigenous`
+--
+
+CREATE TABLE `indigenous` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `age` int(11) NOT NULL,
+  `videoUpload` varchar(255) NOT NULL,
+  `country` varchar(255) NOT NULL,
+  `nationality` varchar(255) NOT NULL,
+  `region` varchar(255) NOT NULL,
+  `zone` varchar(255) NOT NULL,
+  `woreda` varchar(255) NOT NULL,
+  `kebele` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `categories` varchar(255) NOT NULL,
+  `service` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `fileUpload` varchar(255) NOT NULL,
+  `permission` varchar(50) NOT NULL,
+  `description` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `indigenous`
+--
+
+INSERT INTO `indigenous` (`id`, `name`, `gender`, `age`, `videoUpload`, `country`, `nationality`, `region`, `zone`, `woreda`, `kebele`, `email`, `phone`, `categories`, `service`, `title`, `fileUpload`, `permission`, `description`, `created_at`, `status`) VALUES
+(5, 'Abrham molla', 'male', 23, 'innovation.png', 'ethiopia', 'eth', 'south', 'AA', 'k/k', '10', 'abrham@gmail.com', '0911111111', 'indigenous', 'construction', 'ediu ', 'Abrham-molla_ADBMS.pdf', 'yes', 'webd  fiuewf DC', '2024-07-01 09:16:42', 'Accepted'),
+(6, 'afjkaf', 'female', 45, 'WIN_20240704_13_27_04_Pro.mp4', 'ethiopia', 'ethiopia', 'other', 'gamo', '32', '3', 'abebe@kebede.com', '0911111111', 'indigenous', 'others', 'dyvhjf', 'chapter 3&4 MAD presentation.pdf', 'yes', 'afubkj ffubh nfs', '2024-07-04 11:31:02', 'Accepted');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `innovations`
+--
+
+CREATE TABLE `innovations` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `age` int(11) NOT NULL,
+  `videoUpload` varchar(255) NOT NULL,
+  `country` varchar(255) NOT NULL,
+  `nationality` varchar(255) NOT NULL,
+  `region` varchar(255) NOT NULL,
+  `zone` varchar(255) NOT NULL,
+  `woreda` varchar(255) NOT NULL,
+  `kebele` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `categories` varchar(255) NOT NULL,
+  `service` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `fileUpload` varchar(255) NOT NULL,
+  `permission` varchar(50) NOT NULL,
+  `description` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `innovations`
+--
+
+INSERT INTO `innovations` (`id`, `name`, `gender`, `age`, `videoUpload`, `country`, `nationality`, `region`, `zone`, `woreda`, `kebele`, `email`, `phone`, `categories`, `service`, `title`, `fileUpload`, `permission`, `description`, `created_at`, `status`) VALUES
+(3, 'achmu', 'male', 23, 'WIN_20240704_13_27_04_Pro.mp4', 'eth', 'eth', 'north', '09', '32', '01', 'abebe@kebede.com', '0911111111', 'innovation', 'construction', 'jh nm', 'AI individual assignment.pdf', 'no', 'jh kjsdf sjkns v', '2024-07-04 19:33:32', 'Accepted');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `researches`
+--
+
+CREATE TABLE `researches` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `age` int(11) NOT NULL,
+  `videoUpload` varchar(255) NOT NULL,
+  `country` varchar(255) NOT NULL,
+  `nationality` varchar(255) NOT NULL,
+  `region` varchar(255) NOT NULL,
+  `zone` varchar(255) NOT NULL,
+  `woreda` varchar(255) NOT NULL,
+  `kebele` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `categories` varchar(255) NOT NULL,
+  `service` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `fileUpload` varchar(255) NOT NULL,
+  `permission` varchar(50) NOT NULL,
+  `description` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `researches`
+--
+
+INSERT INTO `researches` (`id`, `name`, `gender`, `age`, `videoUpload`, `country`, `nationality`, `region`, `zone`, `woreda`, `kebele`, `email`, `phone`, `categories`, `service`, `title`, `fileUpload`, `permission`, `description`, `created_at`, `status`) VALUES
+(1, 'Abrham molla', 'male', 34, 'WIN_20230504_14_24_22_Pro.jpg', 'ethiopia', 'ethiopian', 'south', 'AA', 'k/k', '05', 'abebe@kebede.com', '0911111111', 'research', 'construction', 'sdfkajsdjdkf akdjbf', 'jasmine documentation STQA.docx', 'no', 'afuibjadsf aldsfbansdfui asifbasdffgadfd asdfbadffbkajdfb asdsifadfhu', '2024-06-21 07:43:31', ''),
+(3, 'abejn', 'male', 34, 'WIN_20240704_13_27_04_Pro.mp4', 'eth', 'ethiopia', 'north', 'aa', '09', '12', 'abrhamm077@gmail.com', '0911111111', 'research', 'health', 'wejf', 'Web-Based Doctors Appointment Final SRS.docx', 'yes', 'wefkjbw efsofujnwf', '2024-07-04 11:16:20', 'Accepted'),
+(4, 'beki', 'male', 34, 'WIN_20240704_13_27_04_Pro.mp4', 'eth', 'eth', 'south', '45', '3', '2', 'beki02@gmail.com', '0923645456', 'research', 'construction', 'ebefjnsdf', 'Abrham-molla-ADBMS.pdf', 'no', 'sdfj ,mskjdfns sfskdnv', '2024-07-04 11:37:44', 'Accepted'),
+(5, 'abrham', 'male', 57, 'WIN_20240704_13_27_04_Pro.mp4', 'ethiopia', 'eth', 'other', '4', '5', '6', 'abrhammolla4@gmail.com', '0911111111', 'research', 'construction', '3wfbhsdf', 'Abrham-molla_ADBMS.pdf', 'no', 'sdifnsdf sfn ', '2024-07-04 11:48:01', 'Accepted'),
+(6, 'beki', 'male', 23, 'WIN_20240704_13_27_04_Pro.mp4', 'ethiopia', 'ethiopia', 'south', 'AA', 'k/k', '05', 'beki02@gmail.com', '0911111111', 'research', 'handicraft', 'ghdgh', 'ABRHAM MOLLA STQA ASSIGNMENT.pdf', 'yes', 'afgdjafljg', '2024-07-05 09:37:30', 'Accepted');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `code` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `code`) VALUES
+(1, 'abrham', 'abrham@gmail.com', '12345', ''),
+(2, 'Abrham molla', 'abrhammolla4@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `award`
+--
+ALTER TABLE `award`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `indigenous`
+--
+ALTER TABLE `indigenous`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `innovations`
+--
+ALTER TABLE `innovations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `researches`
+--
+ALTER TABLE `researches`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `award`
+--
+ALTER TABLE `award`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `indigenous`
+--
+ALTER TABLE `indigenous`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `innovations`
+--
+ALTER TABLE `innovations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `researches`
+--
+ALTER TABLE `researches`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
